@@ -1,9 +1,10 @@
 import React from "react";
+import './App.css';
 
 export default function App() {
   return (
-    <div>
-      <h1>Hello Aberration Co.</h1>
+    <div class="image-container">
+      <img src="/assets/logo.png" alt="" />
     </div>
   );
 }
