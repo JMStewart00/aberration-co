@@ -1,18 +1,12 @@
-html { 
-  background: url(../public/assets/background.png) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+.splash {
+  font-family: 'Splash', cursive;
+  font-weight: 600;
 }
 
-.image-container {
-  max-width: 100%;
-  display: flex;
-  justify-content: center;
+#main {
+  padding-top: 125px;
 }
 
-img {
-  max-width: 400px;
-  margin: auto;
+html {
+  scroll-behavior: smooth;
 }
