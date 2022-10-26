@@ -1,11 +1,17 @@
 import React from "react";
 import CustomNav from "./layout/Navbar";
+import { ReactComponent as FullLogo } from "../assets/images/svg/full--on-light.svg"
 
 export default function App() {
   return (
     <>
       <CustomNav />
       <div id="main">
+        <div className="container">
+          <div className="row justify-content-center text-center py-5">
+            <FullLogo />
+          </div>
+        </div>
         <div className="container">
           <div className="row justify-content-center text-center py-5">
             <h2 id="about">About</h2>

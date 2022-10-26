@@ -1,7 +1,7 @@
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
-import { ReactComponent as Logo } from '../../assets/images/svg/AberrationLogo_2.svg'
+import { ReactComponent as Logo } from '../../assets/images/svg/wordmark--on-dark.svg'
 
 const CustomNav = () => {
   return (
