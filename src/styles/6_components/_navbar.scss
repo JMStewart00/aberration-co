@@ -1,14 +1,14 @@
-.nav__image {
-    max-width: 200px;
-}
-
 .nav {
     background-color: transparent !important;
-    background-image: url('/public/assets/ripped-black.webp');
+    background-image: url('../../assets/images/ripped-black.webp');
     background-size: 150% 195px;
     height: 140px;
     background-position: top center;
     background-repeat: no-repeat;
     margin-bottom: -140px;
     z-index: 9999;
+
+    &__image {
+        max-width: 200px;
+    }
 }

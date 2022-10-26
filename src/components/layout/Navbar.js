@@ -1,14 +1,14 @@
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
-import './navbar.css';
+import { ReactComponent as Logo } from '../../assets/images/svg/AberrationLogo_2.svg'
 
 const CustomNav = () => {
   return (
     <Navbar bg="dark" variant="dark" className="nav">
       <Container>
         <Navbar.Brand>
-          <img className="nav__image" src="/assets/logo.png" alt="Aberration, Co." />
+          <Logo />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

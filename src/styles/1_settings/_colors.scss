@@ -1,0 +1,30 @@
+/*
+  Settings - Colors
+ */
+
+// Brand colors
+$cream: #FFF9EA;
+$jet: #3A3A3A;
+$gold: #C09A31;
+$gold-hover: #B28F2E;
+$green: #ABDABE;
+
+// Supporting colors
+$white: #fcfffc;
+$black: #040f0f;
+$gray-dark: #555;
+$gray-medium: #999;
+$gray-light: #eee;
+
+// Development colors
+// Font
+$body-color: $jet;
+$link-color: $gold;
+$link-hover-color: $gold-hover;
+
+// Border
+$button-border: $gray-dark;
+
+// Alpha
+$white-alpha-1: rgba(255, 255, 255, 0.1);
+$black-alpha-1: rgba(0, 0, 0, 0.1);

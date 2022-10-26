@@ -1,0 +1,15 @@
+/*
+  Settings - Site wide settings.
+
+  Variables and BS4 config.
+ */
+
+@import 'colors.scss';
+@import 'fonts.scss';
+@import 'variables.scss';
+@import 'rhythm.scss';
+@import 'selectors.scss';
+
+// Now import BS4
+@import 'bs4/bs4-overrides.scss';
+@import 'bs4/bs4-main.scss';
