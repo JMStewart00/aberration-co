@@ -1,14 +1,281 @@
-.nav {
-    background-color: transparent !important;
-    background-image: url('../../assets/images/ripped-black.webp');
-    background-size: 150% 195px;
-    height: 140px;
-    background-position: top center;
-    background-repeat: no-repeat;
-    margin-bottom: -140px;
-    z-index: 9999;
+header {
+    z-index: 5;
+    transition: opacity .5s cubic-bezier(.25, .46, .45, .94);
 
-    &__image {
-        max-width: 200px;
+    .nav {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 80px;
+        background-color: $jet;
+
+        .logo {
+            padding: 10px 20px;
+            height: 80px;
+
+            > svg {
+                max-height: 100%;
+            }
+        }
+
+        .toggle {
+            position: absolute;
+            margin: auto;
+            width: 46px;
+            height: 46px;
+            right: rvr(3);
+            top: 0;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+            cursor: pointer;
+
+            .bar {
+                position: relative;
+                width: 40px;
+                height: 2px;
+                background: $gold;
+
+                &:before,
+                &:after {
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    background: inherit;
+                    left: 0;
+                    transform-origin: center center;
+                    transition: transform .25s ease, top .25s ease, bottom .25s ease;
+                }
+
+                &:before {
+                    top: -10px;
+                }
+
+                &:after {
+                    bottom: -10px;
+                }
+            }
+
+            &.clicked {
+                .bar {
+                    background: transparent;
+
+                    &:before,
+                    &:after {
+                        background: $jet;
+                    }
+
+                    &:before {
+                        transform: rotate(45deg);
+                        top: 0;
+                    }
+
+                    &:after {
+                        transform: rotate(-45deg);
+                        bottom: 0;
+                    }
+                }
+            }
+        }
+
+        nav {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: row;
+            opacity: 0;
+            z-index: 5;
+            transition: opacity .5s ease;
+
+            .showcase {
+                background: $jet;
+                flex: 1;
+                color: $cream;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .showcase-container {
+                    width: 50%;
+                    position: relative;
+                    overflow: hidden;
+
+                    &:before {
+                        content: '';
+                        display: block;
+                        padding-top: 100%;
+                    }
+                }
+
+                .showcase-menu {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    overflow-y: visible;
+                    list-style-type: none;
+                    transition: top .25s ease;
+
+
+                    li {
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 40px;
+                        text-transform: uppercase;
+                        text-align: center;
+                        overflow: hidden;
+                        background-position: center center;
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        position: relative;
+                        z-index: 1;
+
+                        &.overlay {
+                            &:before {
+                                content: '';
+                                position: absolute;
+                                left: 0;
+                                top: 0;
+                                right: 0;
+                                bottom: 0;
+                                background: rgba(0, 0, 0, .6);
+                                z-index: -1;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .menu {
+                background: $cream;
+                flex: 1;
+
+                ul {
+                    width: 100vw;
+                    padding: rvr(4) rvr(2) rvr(1) rvr(2);
+                    list-style-type: none;
+                    max-height: 100%;
+                    overflow-y: auto;
+
+                    @include media-breakpoint-up(sm) {
+                        width: 100%;
+                    }
+
+                    &::-webkit-scrollbar {
+                        width: 6px;
+                        height: 10px;
+
+                        &-button {
+                            width: 0px;
+                            height: 0px;
+                        }
+
+                        &-thumb {
+                            background: rgba(0, 0, 0, .4);
+                            border: 0px none $cream;
+                            border-radius: 3px;
+
+                            &:hover {
+                                background: $jet;
+                            }
+
+                            &:active {
+                                background: $jet;
+                            }
+                        }
+
+                        &-track {
+                            background: rgba(0, 0, 0, .1);
+                            border: 0px none $cream;
+                            border-radius: 0;
+
+                            &:hover {
+                                background: rgba(0, 0, 0, .1);
+                            }
+
+                            &:active {
+                                background: rgba(0, 0, 0, .1);
+                            }
+                        }
+
+                        &-corner {
+                            background: transparent;
+                        }
+                    }
+
+                    li {
+                        font-family: $ff-condensedhand;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+
+                        .number {
+                            display: inline-block;
+                            padding: 0 0 0 rvr(2);
+                            overflow: hidden;
+                            color: $green;
+
+                            span {
+                                display: block;
+                                font-size: 48px;
+                                font-weight: 400;
+                                transition: transform .25s ease;
+                                transform: translateY(100%);
+                            }
+                        }
+
+                        a {
+                            display: inline-block;
+                            font-size: 48px;
+                            color: $jet;
+                            line-height: 1;
+                            padding: rvr(1) 0 rvr(1) rvr(3);
+                            transition: transform .25s ease;
+                        }
+
+                        &:hover {
+                            a {
+                                transform: translateX(20px);
+                            }
+                        }
+
+                        &.hover {
+                            .number {
+                                span {
+                                    transform: translateY(0);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.hidden {
+                display: none;
+            }
+
+            &.open {
+                opacity: 1;
+
+                .showcase {
+                    animation: slideInLeft .5s cubic-bezier(.3, 0, .3, 1) forwards;
+                }
+
+                .menu {
+                    animation: slideInRight .5s cubic-bezier(.3, 0, .3, 1) forwards;
+                }
+            }
+        }
     }
 }
