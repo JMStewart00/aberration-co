@@ -4,7 +4,7 @@ import { ReactComponent as Logo } from '../../assets/images/svg/wordmark--on-dar
 
 const CustomNav = () => {
   const [open, setOpen] = useState(false);
-  const [targetHover, setTargetHover] = useState(0);
+  const [targetHover, setTargetHover] = useState('0');
   const [showcaseHeight, setShowcaseHeight] = useState(0)
   let showcaseRef = useRef(null)
 
@@ -26,11 +26,12 @@ const CustomNav = () => {
 
 
   let toggleClasses = classNames(
-    'toggle',
+    'nav__toggle',
     { clicked: open },
   )
 
   let navClasses = classNames(
+    'nav__nav',
     { open: open },
     { hidden: !open },
   )
@@ -45,30 +46,30 @@ const CustomNav = () => {
   }, []);
 
   document.addEventListener("keydown", (e) => {
-    if (e.key == 'Escape' && open) {
+    if (e.key === 'Escape' && open) {
       setOpen(false);
     }
   })
 
   return (
-    <header>
+    <header className="nav-wrapper">
       <div className="nav">
-        <div className="logo">
+        <div className="nav__logo">
           <Logo />
         </div>
         <div
           className={toggleClasses}
           onClick={() => setOpen(!open)}
         >
-          <div className="bar"></div>
+          <div className="nav__toggle__bar"></div>
         </div>
 
         <nav className={navClasses}>
-          <div className="showcase">
-            <div className="showcase-container">
+          <div className="nav__showcase">
+            <div className="nav__showcase-container">
               <ul
                 ref={showcaseRef}
-                className="showcase-menu"
+                className="nav__showcase-menu"
                 style={{ top: (showcaseHeight * targetHover) * -1 }}
               >
                 {showcaseItems.map((item, i) => (
@@ -83,13 +84,12 @@ const CustomNav = () => {
               </ul>
             </div>
           </div>
-
-          <div className="menu">
-            <ul className="main-menu">
+          <div className="nav__menu">
+            <ul className="nav__menu-main">
               {menuItems.map((item, i) => (
                 <li
                   key={i}
-                  className={targetHover == i ? 'hover' : ''}
+                  className={targetHover === i.toString() ? 'hover' : ''}
                   >
                   <div className="number">
                     <span>{('0' + i).slice(-2)}</span>
