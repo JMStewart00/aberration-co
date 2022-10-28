@@ -195,11 +195,16 @@
 
         .number {
           display: inline-block;
-          padding: 0 0 0 rvr(2);
+          padding: 0 0 0 48px;
           overflow: hidden;
           color: $green;
 
+          @include media-breakpoint-down(sm) {
+            display: none !important;
+          }
+          
           span {
+            min-width: 48px;
             display: block;
             font-size: 48px;
             font-weight: 400;
@@ -215,6 +220,10 @@
           line-height: 1;
           padding: rvr(1) 0 rvr(1) rvr(3);
           transition: transform .25s ease;
+          
+          @include media-breakpoint-down(sm) {
+            padding: rvr(1);
+          }
         }
 
         &:hover {

@@ -1,6 +1,6 @@
+@use 'sass:math';
 /// font-size() =
 /// Used for obtaining font size in rem unit
-/// @author msalvadore
 /// @param $size - A px value without the unit
 /// @param $font-size-base A rem unit declared in bs4-var-typography
 ///
@@ -16,5 +16,5 @@
 ///
 @function font-size($size, $base: $font-size-base) {
   $base: strip-unit($base);
-  @return (($size / $base) * rem($base));
+  @return math.div($size, $base) * rem($base);
 }
