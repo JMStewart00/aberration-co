@@ -1,0 +1,59 @@
+// Font weight
+.u-fw {
+  &__medium {
+    font-weight: $fw-medium;
+  }
+
+  &__semi-bold {
+    font-weight: $fw-semi-bold;
+  }
+
+  &__bold {
+    font-weight: $fw-bold;
+  }
+}
+
+// Font sizes
+.u-fs {
+  &__small {
+    font-size: rem(13);
+  }
+
+  &__base {
+    font-size: rem(16);
+  }
+
+  &__17 {
+    font-size: rem(17);
+  }
+}
+
+// Colors
+.u-color {
+  &__gold {
+    color: $gold;
+  }
+
+  &__gold-hover {
+    color: $gold-hover;
+  }
+
+  &__black {
+    color: $black;
+  }
+
+  &__white {
+    color: $white;
+  }
+
+  &__green {
+    color: $green;
+  }
+}
+
+.u-ff {
+  &__badaboom {
+    font-family: 'badaboom', sans-serif;
+    font-weight: 400;
+  }
+}

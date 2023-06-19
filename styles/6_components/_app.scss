@@ -1,0 +1,15 @@
+html {
+  scroll-behavior: smooth;
+}
+
+#main {
+  padding-top: 125px;
+
+  img {
+    max-width: 250px;
+    
+    @include media-breakpoint-up(md) {
+      max-width: 800px;
+    }
+  }
+}

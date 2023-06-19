@@ -1,0 +1,25 @@
+/*
+  Settings - Fonts
+ */
+
+
+@font-face {
+  font-family: CondensedHand;
+  src: url("../../public/assets/fonts/CondensedHand.otf") format("opentype");
+}
+
+@font-face {
+  font-family: CaeciliaLTPro;
+  src: url("../../public/assets/fonts/CaeciliaLTPro.otf") format("opentype");
+}
+
+// Families
+$font-custom-family: CaeciliaLTPro;
+$ff-condensedhand: CondensedHand;
+
+// Weights
+$fw-medium: 400;
+$fw-semi-bold: 500;
+$fw-bold: 700;
+
+$project-lineheight-base: 1.625;

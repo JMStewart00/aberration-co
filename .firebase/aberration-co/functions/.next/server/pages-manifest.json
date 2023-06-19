@@ -1,0 +1,10 @@
+{
+  "/_app": "pages/_app.js",
+  "/food-drink": "pages/food-drink.html",
+  "/_error": "pages/_error.js",
+  "/": "pages/index.html",
+  "/stay-with-us": "pages/stay-with-us.html",
+  "/media-production": "pages/media-production.html",
+  "/_document": "pages/_document.js",
+  "/404": "pages/404.html"
+}
